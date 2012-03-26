@@ -20,6 +20,12 @@
 
 @synthesize changeBlock;
 
+- (void)dealloc
+{
+    self.changeBlock = nil;
+    [super dealloc];
+}
+
 + (UIBlockSwitch*)switchWithState:(Boolean)initialValue onChange:(SwitchBlock)flipped
 {
     UIBlockSwitch* theSwitch = [[[UIBlockSwitch alloc]initWithFrame:CGRectZero]autorelease];
